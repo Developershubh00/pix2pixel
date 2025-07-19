@@ -1,0 +1,349 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --primary: #03e9f4;
+  --primary-dark: #0392b4;
+  --secondary: #7928ca;
+  --accent: #ff0080;
+  --background: #080e1c;
+  --text: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* Progress bar styles */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary) 0%, #60efff 100%);
+  transform-origin: 0%;
+  z-index: 9999;
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--primary) 0%, #60efff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-btn {
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.gradient-btn:hover {
+  background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
+  box-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+}
+
+.blue-gradient-btn {
+  background: linear-gradient(90deg, #2563eb 0%, #60efff 100%);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.blue-gradient-btn:hover {
+  background: linear-gradient(90deg, #60efff 0%, #2563eb 100%);
+  box-shadow: 0 0 15px rgba(3, 233, 244, 0.5);
+}
+
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(3, 233, 244, 0.15) 1px, transparent 1px);
+  background-size: 25px 25px;
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-delay-1 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.floating-delay-2 {
+  animation: float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.wave-container {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.wave {
+  background: linear-gradient(90deg, var(--primary) 0%, #60efff 100%);
+  width: 200%;
+  height: 300px;
+  animation: wave 15s linear infinite;
+  transform-origin: 0% 0%;
+}
+
+.slow-wave {
+  animation: wave 25s linear infinite;
+  opacity: 0.3;
+  background: linear-gradient(90deg, var(--secondary) 0%, var(--accent) 100%);
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.whatsapp-btn {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 999;
+  background-color: #25D366;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .whatsapp-btn {
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+  }
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.form-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  padding: 16px;
+}
+
+.form-popup.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-container {
+  background-color: #111827;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  transform: translateY(20px);
+  transition: transform 0.3s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@media (min-width: 768px) {
+  .form-container {
+    padding: 30px;
+  }
+}
+
+.form-popup.open .form-container {
+  transform: translateY(0);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  background-color: #1f2937;
+  border: 1px solid #374151;
+  color: white;
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  .form-input {
+    font-size: 16px;
+  }
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.service-card {
+  background: rgba(17, 24, 39, 0.8);
+  border-radius: 10px;
+  padding: 0;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(3, 233, 244, 0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .service-card {
+    padding: 0;
+  }
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(3, 233, 244, 0.2);
+  border-color: rgba(3, 233, 244, 0.5);
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(3, 233, 244, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.service-card:hover::before {
+  left: 100%;
+}
+
+.star {
+  position: absolute;
+  background-color: white;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  opacity: 0;
+  animation: twinkle 5s infinite;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Mobile Navigation Improvements */
+@media (max-width: 767px) {
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  
+  section {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  
+  h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+/* Responsive Typography */
+@media (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  
+  h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+/* Desktop Optimizations */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1200px;
+  }
+}
