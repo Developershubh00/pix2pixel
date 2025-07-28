@@ -47,7 +47,7 @@ const Navbar: React.FC<NavbarProps> = ({ openQuoteForm }) => {
         <div className="flex items-center justify-between">
           <a href="#" className="flex items-center z-50 space-x-3">
             {/* Logo placeholder - you can replace this with your actual logo */}
-            <div className="w-10 h-10 overflow-hidden">
+            <div className="w-10 h-10 bg-white overflow-hidden">
   <img
     src={logo}
     alt="logo"
