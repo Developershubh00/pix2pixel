@@ -245,9 +245,9 @@ const Navbar: React.FC = () => {
           <a href="#process" className="nav-link-mobile" onClick={closeMenu}>
             Process
           </a>
-          <a href="#testimonials" className="nav-link-mobile" onClick={closeMenu}>
+          {/* <a href="#testimonials" className="nav-link-mobile" onClick={closeMenu}>
             Testimonials
-          </a>
+          </a> */}
           <a href="#contact" className="nav-link-mobile" onClick={closeMenu}>
             Contact
           </a>
