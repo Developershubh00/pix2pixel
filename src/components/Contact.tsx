@@ -205,7 +205,7 @@ const Contact: React.FC = () => {
                 <div className="text-[#03e9f4] mr-3 md:mr-4 mt-1"><Mail size={20} /></div>
                 <div>
                   <h4 className="font-semibold mb-1 text-sm md:text-base">Email</h4>
-                  <p className="text-gray-300 text-xs md:text-sm">info@pix2pixel.com</p>
+                  <p className="text-gray-300 text-xs md:text-sm">admin@pix2pixel.com</p>
                 </div>
               </div>
               <div className="flex items-start">
